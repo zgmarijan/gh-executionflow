@@ -36,12 +36,12 @@ jobs:
       - name: Test code
         id: run-tests
         run: npm run test
-      - name: Upload test report
-        if: failure() && steps.run-tests.outcome == 'failure'
-        uses: actions/upload-artifact@v6
-        with:
-          name: test-report
-          path: test.json
+      # - name: Upload test report
+      #   if: failure() && steps.run-tests.outcome == 'failure'
+      #   uses: actions/upload-artifact@v6
+      #   with:
+      #     name: test-report
+      #     path: test.json
   build:
     needs: test
     runs-on: ubuntu-latest
